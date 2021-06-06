@@ -1,0 +1,61 @@
+Edge cases
+	- n = 0, n = -1, n = 1, n = 2^31, n = -2^31
+	- List is empty, or contains 1 element
+	- Even/odd cases
+	- Empty/single vertex in graph
+	- Multigraph (loops/multiple edges)
+	- Empty line in input
+
+WA
+	- Try small cases
+	- Create a test case generator
+	- Can floating point numbers be avoided using large integers?
+
+TLE
+	- Randomized algorithms
+	- Precompute answers
+	- Compute all queries at the same time
+	- Bitsets
+
+Seaching
+	- Can your search be how many elements > n?
+	- Rephrase search as yes/no rather than specific element
+	- Test objective function with linear search first
+
+DP
+	- Swap answer and parameter
+	- Drop a paramter and recover it from others
+	- Bottom up might be easier
+	- State contains intervals rather than current element
+
+Math
+	- Look for a pattern
+	- Consider the cycles of the permutation
+	- Sieve
+	- If you're looking for expectations, consider solving the problem for probabilities first
+	- Assume you're player 1 in 
+
+Graphs
+	- Can the problem be modeled as a graph
+	- Does the graph have any neat properties
+	- Strongly connected components
+	- Cycles
+	- Bipartite Matching
+	- Cut vertex/bridge
+	- Degrees of vertices
+	- Eulerian path/circuit
+	- Toposort
+	- Max flow
+
+Trees
+	- Least common ancestor
+	- Euler tour
+	- Tree center
+	- DFS traversal
+		- entry/exit times
+	- Tree is a line graph
+	- Consier subtrees
+
+Strings
+	- Hashing
+	- Work with S+S
