@@ -1,13 +1,12 @@
-vector<bool> isprime(2e6, true);
-vi primes;
+vi primes({2});
+vector<bool> isprime(MAXN, true);
 void sieve() {
-    int n = 2e6;
     isprime[0] = isprime[1] = false;
-    for (ll i = 4; i < n; i += 2)
+    for (int i = 4; i < MAXN; i += 2)
         isprime[i] = false;
-    for (ll i = 3; i < n; i += 2)
-        for (ll j = i*i; j < n; j += i)
-            isprime[j] = false;
-    for (ll i = 0; i < n; ++i)
+    for (int i = 3; i < MAXN; i += 2) {
         if (isprime[i]) primes.push_back(i);
+        for (long long j = i; i*j < MAXN; ++j)
+            isprime[i*j] = false;
+    }
 }

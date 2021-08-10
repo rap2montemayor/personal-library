@@ -1,5 +1,4 @@
 // Note: returns an array of indices
-// const int INF = ~(1<<31);
 bool obj(int idx, int m, vi &a) { return m != INF and a[idx] >= a[m]; }
 int find(int idx, vi &a, vi &d) {
     int l = 0, r = d.size(), m;

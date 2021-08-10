@@ -8,24 +8,22 @@ Code may also be untested.
 Feel free to roast me.
 
 ## TODO:
-- number theoretic stuff
+- math/number theoretic stuff
   - totient
   - divisor stuff
   - crt
+  - matrices (inverse, etc)
 - data structures
-  - union find
   - fenwick
-  - segtrees (and some of its flavors)
-  - nice-ish implementations of them
+  - other flavors of segtrees
 - strings
   - not so crappy hash function
   - KMP that actually works
   - suffix array
 - searching
-  - nice templates for binary/ternary search
+  - binary/ternary search over a continuous range
 - graphs
-  - bridges/articulation points
-  - strongly connected components
-  - lowest common ancestor
   - flows
+- geometry
 - more ideas for the idea bank
+- actually do some testing

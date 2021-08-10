@@ -1,8 +1,6 @@
-// const int INF = ~(1<<31);
-// int n;
-// vvii g;
-vi dist(n, INF);
+int dist[MAXN];
 void dijkstra(int start) {
+    fill(dist, dist+MAXN, INF);
     priority_queue<ii> q;
     q.push({0, start});
     dist[start] = 0;

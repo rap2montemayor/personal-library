@@ -16,6 +16,8 @@ TLE
 	- Precompute answers
 	- Compute all queries at the same time
 	- Bitsets
+	- Some data structures have large constant factors
+		- e.g. sparse table vs segment tree
 
 Seaching
 	- Can your search be how many elements > n?
@@ -25,15 +27,20 @@ Seaching
 DP
 	- Swap answer and parameter
 	- Drop a paramter and recover it from others
-	- Bottom up might be easier
+		- not so obvious parameters: index
+	- Bottom up might be faster/easier
 	- State contains intervals rather than current element
+	- Small N: try bitmasks
+
+Greedy:
+	- Consider total-current instead of current/total
 
 Math
 	- Look for a pattern
 	- Consider the cycles of the permutation
 	- Sieve
-	- If you're looking for expectations, consider solving the problem for probabilities first
-	- Assume you're player 1 in 
+	- Simpler version of expectations -> probabilities
+	- Assume you're player 1 in games
 
 Graphs
 	- Can the problem be modeled as a graph

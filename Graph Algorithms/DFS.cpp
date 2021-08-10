@@ -1,6 +1,4 @@
-// int n;
-// vvi g;
-vector<bool> vis(n);
+vector<bool> vis(MAXN);
 void dfs(int u) {
     vis[u] = true;
     for (int v: g[u])

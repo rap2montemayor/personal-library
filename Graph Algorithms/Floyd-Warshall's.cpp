@@ -1,6 +1,3 @@
-// Note: This will modify the matrix
-// int n;
-// vvi g;
 void fw() {
     for (int k = 0; k < n; ++k)
     for (int i = 0; i < n; ++i)

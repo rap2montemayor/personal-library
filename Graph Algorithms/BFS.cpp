@@ -1,5 +1,3 @@
-// int n
-// vvi g;
 void bfs(int start) {
     queue<int> q({start});
     vector<bool> vis(n);

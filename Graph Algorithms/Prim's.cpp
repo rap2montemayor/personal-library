@@ -1,5 +1,4 @@
 // typedef vector<tuple<int, int, int>> viii;
-// vvii g;
 viii prim(int start) {
     priority_queue<ii, vii, greater<ii>> q;
     q.push{{0, start}};

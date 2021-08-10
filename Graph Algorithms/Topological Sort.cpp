@@ -1,8 +1,6 @@
-// int n;
-// vvi g;
 vi toposort() {
     queue<int> q;
-    degs[n];
+    int degs[n];
     for (int i = 0; i < n; ++i) {
         degs[i] = g[i].size();
         if (degs[i] == 0) q.push(i);

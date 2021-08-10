@@ -1,4 +1,3 @@
-// ll MOD = 1e9+7;
 ll modpow(ll n, ll x) {
     ll res = 1;
     while (x) {
