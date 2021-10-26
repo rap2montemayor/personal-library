@@ -1,5 +1,6 @@
-vi dist(MAXN, INF);
+int dist[MAXN];
 void bellmanford(int s) {
+    fill(dist, dist+MAXN, INF);
     dist[s] = 0;
     for (int i = 0; i < n-1; ++i)
         for (int u = 0; u < n; ++u)

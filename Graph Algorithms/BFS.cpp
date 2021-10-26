@@ -1,6 +1,6 @@
+vector<bool> vis(MAXN);
 void bfs(int start) {
     queue<int> q({start});
-    vector<bool> vis(n);
     vis[start] = true;
 
     while (not q.empty()) {

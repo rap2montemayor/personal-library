@@ -1,5 +1,5 @@
 int entry[MAXN], low[MAXN], timer = 0;
-bool vis[MAXN] = {}, stacked[MAXN] = {};
+vector<bool> vis(MAXN), stacked(MAXN);
 void dfs(int u, vi &s, vvi &scc) {
     vis[u] = stacked[u] = true;
     entry[u] = low[u] = ++timer;

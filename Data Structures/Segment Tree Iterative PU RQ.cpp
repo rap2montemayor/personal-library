@@ -7,12 +7,13 @@ struct segtree {
             vals[i] = vals[i<<1] + vals[i<<1|1];
     }
 
-    void update(int p, int value) {
-        for (vals[p += n] = value; p > 1; p >>= 1)
+    // Increases the value at [p] by val
+    void update(int p, int val) {
+        for (vals[p += n] = val; p > 1; p >>= 1)
             vals[p>>1] = vals[p] + vals[p^1];
     }
 
-    // [l, r)
+    // Gets the sum of elements in [l,r)
     int query(int l, int r) {
         int res = 0;
         for (l += n, r += n; l < r; l >>= 1, r >>= 1) {

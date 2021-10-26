@@ -1,14 +1,14 @@
 int dep[MAXN], par[MAXN][20];
-void dfs(int u, int d, int p) {
+void dfsbinlift(int u, int d, int p) {
+    fill(par[i], par[i]+20, -1);
     par[u][0] = p, dep[u] = d;
     for (int v: g[u])
         if (par[v][0] == -1)
-            dfs(v, d+1, u);
+            dfsbinlift(v, d+1, u);
 }
 
 void process(int start) {
-    memset(par, -1, sizeof(par));
-    dfs(start, 0, start);
+    dfsbinlift(start, 0, start);
     for (int j = 1; j < 20; ++j)
         for (int v = 0; v < n; ++v)
             par[v][j] = par[par[v][j-1]][j-1];

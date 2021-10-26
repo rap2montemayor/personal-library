@@ -6,7 +6,7 @@ void sieve() {
         isprime[i] = false;
     for (int i = 3; i < MAXN; i += 2) {
         if (isprime[i]) primes.push_back(i);
-        for (long long j = i; i*j < MAXN; ++j)
+        for (int j = i; i*j < MAXN; ++j)
             isprime[i*j] = false;
     }
 }

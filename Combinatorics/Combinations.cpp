@@ -1,5 +1,5 @@
 // Consider using Pascal's triangle
 // Requires fac and modpow
-ll comb(ll n, ll r) {
+int comb(int n, int r) {
     return fac[n] * modinv(fac[r] * fac[n - r] % MOD) % MOD;
 }

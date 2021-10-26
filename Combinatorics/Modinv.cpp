@@ -1,2 +1,2 @@
 // Requires modpow
-ll modinv(ll n) { return modpow(n, MOD-2); }
+int modinv(int n) { return modpow(n, MOD-2); }

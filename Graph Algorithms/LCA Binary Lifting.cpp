@@ -1,5 +1,5 @@
 // Requires binary lifting
-// {LCA, dist}
+// returns {LCA, dist}
 ii lca(int u, int v) {
     if (dep[u] > dep[v]) swap(u, v);
     int dist = dep[v] - dep[u];

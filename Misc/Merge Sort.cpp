@@ -1,8 +1,8 @@
 // Also returns inversions
-int mergesort(vi &a, int l=-1, int r=-1) {
-    if (l == -1) l = 0, r = a.size();
-    int ans = 0, m = (l+r) / 2;
-    if (r-l > 1) ans += mergesort(a, l, m) + mergesort(a, m, r);
+int mergesort(int l=-1, int r=-1) {
+    if (l == -1) l = 0, r = n;
+    int inversions = 0, m = (l+r) / 2;
+    if (r-l > 1) inversions += mergesort(l, m) + mergesort(m, r);
 
     int left[m-l+1], right[r-m+1];
     left[m-l] = 2e9, right[r-m] = 2e9;
@@ -12,6 +12,6 @@ int mergesort(vi &a, int l=-1, int r=-1) {
     int i = 0, j = 0, k = l;
     while (k < r)
         if (left[i] < right[j]) a[k++] = left[i++];
-        else a[k++] = right[j++], ans += left[i] != 2e9 ? m-l-i : 0;
-    return ans;
+        else a[k++] = right[j++], inversions += left[i] != 2e9 ? m-l-i : 0;
+    return inversions;
 }

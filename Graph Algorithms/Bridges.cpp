@@ -1,6 +1,6 @@
 int entry[MAXN], low[MAXN], timer = 0;
-bool vis(MAXN);
-void dfs(int u, int p, set<pair<int, int>> &bridges) {
+vector<bool> vis(MAXN);
+void dfsbridges(int u, int p, set<ii> &bridges) {
     vis[u] = true;
     entry[u] = low[u] = timer++;
     for (int v: g[u]) {
@@ -8,7 +8,7 @@ void dfs(int u, int p, set<pair<int, int>> &bridges) {
         if (vis[v])
             low[u] = min(low[u], entry[v]);
         else {
-            dfs(v, u, bridges);
+            dfsbridges(v, u, bridges);
             low[u] = min(low[u], low[v]);
             if (entry[u] < low[v])
                 bridges.insert({u, v});
@@ -16,11 +16,11 @@ void dfs(int u, int p, set<pair<int, int>> &bridges) {
     }
 }
 
-set<pair<int, int>> getbridges() {
+set<ii> getbridges() {
     fill(entry, entry+MAXN, -1);
     fill(low, low+MAXN, -1);
     set<ii> bridges;
     for (int i = 0; i < n; ++i)
-        if (not vis[i]) dfs(i, -1, bridges);
+        if (not vis[i]) dfsbridges(i, -1, bridges);
     return bridges;
 }

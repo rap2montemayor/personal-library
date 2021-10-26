@@ -35,6 +35,13 @@ DP
 Greedy:
 	- Consider total-current instead of current/total
 
+Ad-hoc:
+	- Eliminate obvious cases
+	- Ignore unnecessary information, and use it to draw the problem in new ways
+	- Making obvious lower and upper bounds, and proving they are constructible
+	- Finding invariants
+	- Define something that cannot change much
+
 Math
 	- Look for a pattern
 	- Consider the cycles of the permutation

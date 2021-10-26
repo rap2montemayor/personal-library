@@ -1,6 +1,6 @@
 // Note: needs g and rev
 vi order;
-bool vis[MAXN] = {};
+vector<bool> vis(MAXN);
 void dfs1(int u) {
     vis[u] = true;
     for (int v: g[u])
@@ -20,7 +20,6 @@ vvi kosaraju() {
         if (not vis[i]) dfs1(i);
 
     vvi scc;
-    fill(vis, vis+MAXN, false);
     reverse(order.begin(), order.end());
     for (int i: order) {
         if (not vis[i]) {

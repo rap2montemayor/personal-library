@@ -1,4 +1,4 @@
-ll comb[2001][2001] = {0};
+int comb[2001][2001] = {0};
 void initcomb() {
     comb[0][0] = 1;
     for (int i = 1; i <= 2000; ++i) {

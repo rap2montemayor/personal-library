@@ -1,20 +1,21 @@
-void compress(int n, pair<int,int> coords[]) {
-    int byx[n], byy[n];
+bool compx(int l, int r) { return coords[l].first < coords[r].first; }
+bool compy(int l, int r) { return coords[l].second < coords[r].second; }
+void compress(int n, ii coords[]) {
+    int sortedx[n], sortedy[n];
     for (int i = 0; i < n; ++i)
-        byx[i] = byy[i] = i;
-    // apologies for the lambda
-    sort(byx, byx+n, [coords](int l, int r) { coords[l].first < coords[r].first; });
-    sort(byy, byy+n, [coords](int l, int r) { coords[l].second < coords[r].second; });
+        sortedx[i] = sortedy[i] = i;
+    sort(sortedx, sortedx+n, compx);
+    sort(sortedy, sortedy+n, compy);
     int x = 0, y = 0,
-        prevx = coords[byx[0]].first,
-        prevy = coords[byy[0]].second;
-    coords[byx[0]].first = coords[byy[0]].second = 0;
+        prevx = coords[sortedx[0]].first,
+        prevy = coords[sortedy[0]].second;
+    coords[sortedx[0]].first = coords[sortedy[0]].second = 0;
     for (int i = 1; i < n; ++i) {
-        if (coords[byx[i]].first != prevx)
-            ++x, prevx = coords[byx[i]].first;
-        if (coords[byy[i]].second != prevy)
-            ++y, prevy = coords[byy[i]].second;
-        coords[byx[i]].first = x;
-        coords[byy[i]].second = y;
+        if (coords[sortedx[i]].first != prevx)
+            ++x, prevx = coords[sortedx[i]].first;
+        if (coords[sortedy[i]].second != prevy)
+            ++y, prevy = coords[sortedy[i]].second;
+        coords[sortedx[i]].first = x;
+        coords[sortedy[i]].second = y;
     }
 }

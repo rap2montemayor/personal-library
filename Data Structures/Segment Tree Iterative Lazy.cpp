@@ -1,6 +1,6 @@
 struct segtree {
     int n, h, vals[2*MAXN] = {}, deltas[MAXN] = {};
-    segtree(int n, int a[]) {
+    segtree(int n, int a[]) : n(n) {
         h = sizeof(int) * 8 - __builtin_clz(n);
         for (int i = 0; i < n; ++i)
             vals[n+i] = a[i];
@@ -31,19 +31,20 @@ struct segtree {
         }
     }
 
-    void update(int l, int r, int value) {
+    // Increase all elements in [l,r) by val
+    void update(int l, int r, int val) {
         l += n, r += n;
         int l0 = l, r0 = r;
         for (; l < r; l >>= 1, r >>= 1) {
-            if (l&1) apply(l++, value);
-            if (r&1) apply(--r, value);
-            value *= 2;
+            if (l&1) apply(l++, val);
+            if (r&1) apply(--r, val);
+            val *= 2;
         }
         build(l0);
         build(r0 - 1);
     }
 
-    // [l, r)
+    // Gets the sum of elements in [l,r)
     int query(int l, int r) {
         l += n, r += n;
         push(l);
