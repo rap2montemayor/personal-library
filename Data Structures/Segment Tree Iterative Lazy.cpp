@@ -1,5 +1,16 @@
+// Iterative, lazy segment tree
+// 
+// Segment tree that supports both O(log n) range queries and range updates.
+//
+// Notes:
+// - Queries are [l, r)
+// - Difficult to understand and modify compared to the recursive version.
+// - Tested on SPOJ HORRIBLE https://www.spoj.com/problems/HORRIBLE/
+// - Reference: https://codeforces.com/blog/entry/18051
+
 struct segtree {
-    int n, h, vals[2*MAXN] = {}, deltas[MAXN] = {};
+    int n, h, vals[2*MAXN], deltas[MAXN];
+
     segtree(int n, int a[]) : n(n) {
         h = sizeof(int) * 8 - __builtin_clz(n);
         for (int i = 0; i < n; ++i)
