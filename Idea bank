@@ -30,6 +30,7 @@ DP
 		- not so obvious parameters: index
 	- Bottom up might be faster/easier
 	- State contains intervals rather than current element
+	- Memoize range of possible solutions rather than a single solution
 	- Small N: try bitmasks
 
 Greedy:
