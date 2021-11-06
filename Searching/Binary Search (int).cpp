@@ -3,12 +3,8 @@
 // Returns the last integer i such that obj(i) < x.
 //
 // Note:
-// - This implementation assumes obj monotonically increases
-// - Behavior can be finnicky when changes are made on
-//      - the comparison
-//      - how l and r are updated
-//      - how m is computed
-// - Make sure to test when making changes
+// - Searches in the range [l, r)
+// - Behavior can be finnicky. Make sure to test.
 // - Consider using lower_bound() or upper_bound() if you are simply searching
 //      for an element in an array.
 
