@@ -1,3 +1,7 @@
+// Tarjan's Strongly Connected Components Algorithm
+//
+// Strongly connected components of a directed graph in O(|V|+|E|) time.
+
 int entry[MAXN], low[MAXN], timer = 0;
 vector<bool> vis(MAXN), stacked(MAXN);
 void dfs(int u, vi &s, vvi &scc) {

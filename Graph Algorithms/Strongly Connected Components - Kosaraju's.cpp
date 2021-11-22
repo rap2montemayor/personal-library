@@ -1,4 +1,10 @@
-// Note: needs g and rev
+// Kosaraju's Algorithm
+//
+// Strongly connected components of a directed graph in O(|V|+|E|) time.
+//
+// Notes:
+// - Needs the adjacency list g, and a reversed adjacency list rev
+
 vi order;
 vector<bool> vis(MAXN);
 void dfs1(int u) {
