@@ -1,17 +1,15 @@
 // Iterative Segment Tree
 // 
-// Segment tree that supports O(log n) range queries and point updates.
+// Range queries and point updates in O(log n). Constructed in O(n logn).
+// The tree is built starting from the leaves. Bottom-up style.
+// Queries take advantage of various properties of this implementation.
+//      - The original array is contained in vals[n,2*n]
+//      - Whether vals[i] contains elements outside of the range [l, r) can be
+//          determined by checking the parity of i, and the side i started from.
+//          This lets us know if it is okay to "jump" to a more "inner" branch.
 //
 // Notes:
 // - Queries are [l, r).
-// - Works like the recursive version, but the tree is built starting from the
-//      leaves instead of the root. Bottom-up style.
-// - Queries take advantage of various properties of this implementation.
-//      - The original array is contained in vals[n,2*n]
-//      - Queries start from the two farthest leaves corresponding to [l, r).
-//      - Whether vals[i/2] contains elements outside of the range [l, r) can
-//          be determined by checking the parity of i. When that happens, it is
-//          safe to "jump" to a more "inner" branch.
 // - Tested on SPOJ FENTREE https://www.spoj.com/problems/FENTREE/
 // - Reference: https://codeforces.com/blog/entry/18051
 

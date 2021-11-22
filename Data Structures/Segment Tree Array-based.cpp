@@ -1,18 +1,15 @@
 // Recursive, Array-based Segment Tree
 // 
-// Segment tree that supports O(log n) range queries and point updates.
+// Range queries and point updates in O(log n). Constructed in O(n logn).
+// Recursively builds a binary tree that stores the results of queries on the
+//      original array's halves, quarters, eighths, etc. Queries on any range
+//      can be constructed with the largest segments that fill up the range.
 //
 // Notes:
 // - Queries are [l, r]
-// - The current vertex coveres [i, j]
-// - The index of the current vertex is p
-// - Update and query must be called with p=1, i=0, j=n-1. This is handled
-//      automatically by setting their default values to -1, and checking for
-//      them when they're called.
-// - Works by recursively building a binary tree that stores the results of
-//      queries on the original array's halves, quarters, eighths, etc. Queries
-//      on any range will only get the largest segments that will fill up the
-//      query's range.
+// - Queries and updates require the following additional information:
+//      - The range of the current vertex [i, j]
+//      - The index of the current vertex p
 // - Tested on SPOJ FENTREE https://www.spoj.com/problems/FENTREE/
 
 struct segtree {

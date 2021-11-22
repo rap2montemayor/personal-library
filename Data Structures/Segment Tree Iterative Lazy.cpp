@@ -1,10 +1,10 @@
 // Iterative, lazy segment tree
 // 
-// Segment tree that supports both O(log n) range queries and range updates.
+// Range queries and range updates in O(log n). Constructed in O(n logn).
+// To do: Description
 //
 // Notes:
 // - Queries are [l, r)
-// - Difficult to understand and modify compared to the recursive version.
 // - Tested on SPOJ HORRIBLE https://www.spoj.com/problems/HORRIBLE/
 // - Reference: https://codeforces.com/blog/entry/18051
 

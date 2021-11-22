@@ -1,18 +1,15 @@
 // Recursive, Array-based, Lazy Segment Tree
 // 
-// Segment tree that supports both O(log n) range queries and range updates.
+// Range queries and range updates in O(log n). Constructed in O(n logn).
+// Leaves a delta/lazy flag if an update no longer needs to propagate further
+//      down the tree. Subsequent queries will continue propagating changes when
+//      they need to.
 //
 // Notes:
 // - Queries are [l, r]
-// - The current vertex coveres [i, j]
-// - The index of the current vertex is p
-// - Update and query must be called with p=1, i=0, j=n-1. This is handled
-//      automatically by setting their default values to -1, and checking for
-//      them when they're called.
-// - Works like a normal segment tree, but leaves a delta/lazy flag if a query
-//      no longer needs to propagate further down a tree. Subsequent queries
-//      will pick up that lazy flag and continue propagating changes when they
-//      need to.
+// - Queries and updates require the following additional information:
+//      - The range of the current vertex [i, j]
+//      - The index of the current vertex p
 // - Tested on SPOJ HORRIBLE https://www.spoj.com/problems/HORRIBLE/
 
 struct segtree {
